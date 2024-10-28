@@ -1,0 +1,13 @@
+.vscode/**
+node_modules/**
+src/**
+out/**
+
+.gitignore
+tsconfig.json
+package2.json
+package3.json
+
+打包(要安裝VSCE工具).bat
+當前項目安裝esbuild.bat
+當前項目安裝VSCE工具.bat
