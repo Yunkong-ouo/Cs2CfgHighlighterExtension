@@ -1,3 +1,9 @@
+<div align="right">
+
+**繁體中文** | [简体中文](./README.zh-CN.md) | [English](./README.en.md)
+
+</div>
+
 # CS2 CFG 高亮
 
 一個用於語法高亮的 Visual Studio Code 擴展，適用於 CS2 配置文件（.cfg）。
