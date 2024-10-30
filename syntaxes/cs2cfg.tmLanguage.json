@@ -47,6 +47,10 @@
 				{
 					"name": "support.function",
 					"match": "([+-]?[A-Za-z_$][A-Za-z0-9_$]*)"
+				},
+				{
+					"name" : "support.function",
+					"match": "[\\u4e00-\\u9fff]+"
 				}
 			]
 		},
