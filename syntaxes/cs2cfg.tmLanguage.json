@@ -95,7 +95,7 @@
 				},
 				{
 					"name": "string.quoted.double",
-					"match": "(?i)\\b(forwardback|rightleft|forward|back|left|right|yaw|pitch|say|say_team|say_party|lastinv|load_itempreset|voicemenu|voice_menu_\\d|join_class|vote|changeclass|changeteam|open_charinfo_\\w+|show_quest_log|disguiseteam|cancelselect|pause|quit|toggleconsole|buy|buymenu|radio|radio1|radio2|radio3|drop|teammenu|messagemode|messagemode2|disconnect|developer|playvol|screenshot|save_replay|askconnect_accept|abuse_report_queue|name|lastdisguise|dropitem|centerview|showmapinfo|inspect|invnext|invprev|wait|taunt_by_name|slot\\d{1,2})\\b"
+					"match": "(?i)\\b(forwardback\\s+|rightleft\\s+|forward\\s+|back\\s+|left\\s+|right\\s+|yaw|pitch|say|say_team|say_party|lastinv|load_itempreset|voicemenu|voice_menu_\\d|join_class|vote|changeclass|changeteam|open_charinfo_\\w+|show_quest_log|disguiseteam|cancelselect|pause|quit|toggleconsole|buy|buymenu|radio|radio1|radio2|radio3|drop|teammenu|messagemode|messagemode2|disconnect|developer|playvol|screenshot|save_replay|askconnect_accept|abuse_report_queue|name|lastdisguise|dropitem|centerview|showmapinfo|inspect|invnext|invprev|wait|taunt_by_name|slot\\d{1,2})\\b"
 				}
 			]
 		},
