@@ -4,6 +4,10 @@
 
 </div>
 
+# Installation
+
+Please go to the extension page, then click the "..." button at the top of the page, and select "Install from VSIX" at the bottom of the menu.
+
 # CS2 CFG Highlight
 
 An extension for syntax highlighting in Visual Studio Code, suitable for CS2 configuration files (.cfg).

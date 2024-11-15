@@ -1,25 +1,8 @@
+// https://code.visualstudio.com/docs/extensionAPI/extension-points#_contributeslanguages
 {
-    "comments": {
-        "lineComment": "//",
-        "blockComment": [ "/*", "*/" ]
-    },
-    "brackets": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"]
-    ],
-    "autoClosingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
-    ],
-    "surroundingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
-    ]
+  "comments": {
+    "lineComment": "//"
+  },
+  "autoClosingPairs": [["\"", "\""]],
+  "surroundingPairs": [["\"", "\""]]
 }

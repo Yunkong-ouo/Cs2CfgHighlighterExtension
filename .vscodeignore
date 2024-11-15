@@ -1,15 +1,5 @@
 .vscode/**
 .vscode-test/**
-node_modules/**
-src/**
-out/**
-
 .gitignore
 vsc-extension-quickstart.md
-tsconfig.json
-package2.json
-package3.json
-
-打包(要安裝VSCE工具).bat
-當前項目安裝esbuild.bat
-當前項目安裝VSCE工具.bat
+打包.bat

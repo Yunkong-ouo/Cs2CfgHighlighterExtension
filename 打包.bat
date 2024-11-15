@@ -1,2 +1,1 @@
-npx vsce package
-::vsce package
+vsce package
