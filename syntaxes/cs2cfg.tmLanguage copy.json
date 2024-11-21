@@ -7,8 +7,6 @@
     { "include": "#command" },
     { "include": "#numeric-literal" },
     { "include": "#variable" },
-    { "include": "#log-flags" },
-    { "include": "#variable2" },
     { "include": "#function" },
     { "include": "#punctuation-semicolon" }
   ],
@@ -22,22 +20,6 @@
         {
           "name": "string.quoted.double.cfg",
           "match": "/|\\|"
-        }
-      ]
-    },
-    "log-flags": {
-      "patterns": [
-        {
-          "name": "keyword.operator.quantifier.regexp",
-          "match": "\\blog_flags\\b"
-        },
-        {
-          "name": "keyword.control.cfg",
-          "match": "(?<=log_flags\\s)\\w+"
-        },
-        {
-          "name": "constant.language.cfg",
-          "match": "(?<=\\s)([\\+|-]\\w+)"
         }
       ]
     },
@@ -59,35 +41,23 @@
       "patterns": [
         { "include": "#punctuation-semicolon" },
         { "include": "#command" },
-        { "include": "#numeric-literal" }
+        { "include": "#numeric-literal" },
+        { "include": "#variable" }
       ]
     },
     "variable": {
       "patterns": [
         {
           "name": "support.function",
-          "match": "(?<!\")[^\"\\n]+(?=\")"
-        }
-      ]
-    },
-    "variable2": {
-      "patterns": [
-        {
-          "name": "variable.other",
           "match": "([\\+|-]?[_$[:alpha:]][_$[:alnum:]]*)"
-        },
-        { "include": "#log-flags" },
-        { "include": "#function" },
-        { "include": "#punctuation-semicolon" },
-        { "include": "#command" },
-        { "include": "#numeric-literal" }
+        }
       ]
     },
     "numeric-literal": {
       "patterns": [
         {
           "name": "constant.numeric",
-          "match": "(?<=^|\\s)([-+]?\\d+(?:\\.\\d+)?)(?=\\s|$|;|\"|,)"
+          "match": "([-+]?\\d(?:.\\d)?)"
         }
       ]
     },
@@ -103,7 +73,7 @@
     "movement": {
       "patterns": [
         {
-          "name": "constant.other.character-class.regexp",
+          "name": "variable.other.readwrite.js",
           "match": "(?i)\\b(forward|back|right|left|forwardback|rightleft)\\b(?=\\s[-+]?\\d)"
         },
         { "include": "#numeric-literal" }
@@ -133,7 +103,7 @@
       "patterns": [
         {
           "name": "keyword.operator.quantifier.regexp",
-          "match": "(?i)\\b(sleep|blog_flags|echo|echoln|clear|exec|execifexists|exec_async|grep|setinfo|incrementvar|multvar|pwatchvar|toggle|cl_radial_radio_tab_(0|1|2)_text_(1|2|3|4|5|6|7|8))\\b"
+          "match": "(?i)\\b(echo|echoln|clear|exec|execifexists|exec_async|grep|setinfo|incrementvar|multvar|pwatchvar|toggle|cl_radial_radio_tab|cl_radial_radio_tab_0_text_1|cl_radial_radio_tab_0_text_2|cl_radial_radio_tab_0_text_3|cl_radial_radio_tab_0_text_4|cl_radial_radio_tab_0_text_5|cl_radial_radio_tab_0_text_6|cl_radial_radio_tab_0_text_7|cl_radial_radio_tab_0_text_8|cl_radial_radio_tab_1_text_1|cl_radial_radio_tab_1_text_2|cl_radial_radio_tab_1_text_3|cl_radial_radio_tab_1_text_4|cl_radial_radio_tab_1_text_5|cl_radial_radio_tab_1_text_6|cl_radial_radio_tab_1_text_7|cl_radial_radio_tab_1_text_8|cl_radial_radio_tab_2_text_1|cl_radial_radio_tab_2_text_2|cl_radial_radio_tab_2_text_3|cl_radial_radio_tab_2_text_4|cl_radial_radio_tab_2_text_5|cl_radial_radio_tab_2_text_6|cl_radial_radio_tab_2_text_7|cl_radial_radio_tab_2_text_8)\\b"
         }
       ]
     },
