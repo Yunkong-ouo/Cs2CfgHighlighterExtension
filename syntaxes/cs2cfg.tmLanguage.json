@@ -103,8 +103,12 @@
           "match": "(?<=log_flags\\s)\\w+"
         },
         {
+          "name": "support.class.cfg",
+          "match": "(?<=log_flags\\s\\w+\\s)\\w+"
+        },
+        {
           "name": "constant.language.cfg",
-          "match": "(?<=\\blog_flags\\s\\w+\\s)([\\+|-]\\w+)"
+          "match": "(?<=log_flags\\s\\w+(\\s\\w+)?\\s)([\\+|-]\\w+)"
         }
       ]
     },
