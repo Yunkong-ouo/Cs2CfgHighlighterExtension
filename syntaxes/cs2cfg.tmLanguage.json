@@ -6,7 +6,6 @@
     { "include": "#comment" },
     { "include": "#command" },
     { "include": "#numeric-literal" },
-    { "include": "#log-flags" },
     { "include": "#variable" },
     { "include": "#function" },
     { "include": "#punctuation-semicolon" }
@@ -45,22 +44,6 @@
         }
       ]
     },
-    "log-flags": {
-      "patterns": [
-        {
-          "name": "keyword.operator.quantifier.regexp",
-          "match": "\\blog_flags\\b"
-        },
-        {
-          "name": "keyword.control.cfg",
-          "match": "(?<=log_flags\\s)\\w+"
-        },
-        {
-          "name": "constant.language.cfg",
-          "match": "(?<=\\s)([\\+|-]\\w+)"
-        }
-      ]
-    },
     "function": {
       "name": "variable.other.readwrite.js",
       "begin": "\"",
@@ -71,7 +54,6 @@
         { "include": "#punctuation-semicolon" },
         { "include": "#command" },
         { "include": "#numeric-literal" },
-        { "include": "#log-flags" },
         { "include": "#variable" }
       ]
     },
@@ -97,7 +79,8 @@
         { "include": "#actions" },
         { "include": "#CS-command" },
         { "include": "#sourcemod" },
-        { "include": "#movement" }
+        { "include": "#movement" },
+        { "include": "#log-flags" }
       ]
     },
     "movement": {
@@ -107,6 +90,22 @@
           "match": "(?i)\\b(forward|back|right|left|forwardback|rightleft)\\b(?=\\s[-+]?\\d)"
         },
         { "include": "#numeric-literal" }
+      ]
+    },
+    "log-flags": {
+      "patterns": [
+        {
+          "name": "keyword.operator.quantifier.regexp",
+          "match": "\\blog_flags\\b"
+        },
+        {
+          "name": "keyword.control.cfg",
+          "match": "(?<=log_flags\\s)\\w+"
+        },
+        {
+          "name": "constant.language.cfg",
+          "match": "(?<=\\blog_flags\\s\\w+\\s)([\\+|-]\\w+)"
+        }
       ]
     },
     "buttons": {
