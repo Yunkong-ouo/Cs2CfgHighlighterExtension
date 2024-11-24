@@ -6,8 +6,8 @@
     { "include": "#comment" },
     { "include": "#command" },
     { "include": "#numeric-literal" },
-    { "include": "#variable" },
     { "include": "#log-flags" },
+    { "include": "#variable" },
     { "include": "#function" },
     { "include": "#punctuation-semicolon" }
   ],
@@ -71,6 +71,7 @@
         { "include": "#punctuation-semicolon" },
         { "include": "#command" },
         { "include": "#numeric-literal" },
+        { "include": "#log-flags" },
         { "include": "#variable" }
       ]
     },
