@@ -15,11 +15,11 @@
       "patterns": [
         {
           "name": "string.quoted.double.cfg",
-          "match": ";"
+          "match": "\\;"
         },
         {
-          "name": "string.quoted.double.cfg",
-          "match": "/"
+          "name": "meta.template.expression",
+          "match": "\\/"
         },
         {
           "name": "string.quoted.double.cfg",
@@ -27,11 +27,15 @@
         },
         {
           "name": "string.quoted.double.cfg",
-          "match": "~"
+          "match": "\\~"
         },
         {
           "name": "string.quoted.double.cfg",
-          "match": ":"
+          "match": "\\:"
+        },
+        {
+          "name": "string.quoted.double.cfg",
+          "match": "\\."
         }
       ]
     },
@@ -60,7 +64,7 @@
     "variable": {
       "patterns": [
         {
-          "name": "support.function",
+          "name": "variable.other.readwrite.js",
           "match": "([\\+|-]?[_$[:alpha:]][_$[:alnum:]]*)"
         }
       ]
@@ -80,7 +84,8 @@
         { "include": "#CS-command" },
         { "include": "#sourcemod" },
         { "include": "#movement" },
-        { "include": "#log-flags" }
+        { "include": "#log-flags" },
+        { "include": "#alias" }
       ]
     },
     "movement": {
@@ -109,6 +114,18 @@
         {
           "name": "constant.language.cfg",
           "match": "(?<=log_flags\\s\\w+(\\s\\w+)?\\s)([\\+|-]\\w+)"
+        }
+      ]
+    },
+    "alias": {
+      "patterns": [
+        {
+          "name": "support.function",
+          "match": "(?<=alias\\s)\\w+"
+        },
+        {
+          "name": "constant.regexp",
+          "match": "(?<=alias\\s\\w+\\s)\\w+"
         }
       ]
     },
