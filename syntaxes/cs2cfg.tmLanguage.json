@@ -92,7 +92,7 @@
       "patterns": [
         {
           "name": "constant.character.set.regexp",
-          "match": "(?i)\\b(forward|back|right|left|forwardback|rightleft)\\b(?=\\s[-+]?\\d)"
+          "match": "(?i)\\b(forward|back|right|left|forwardback|rightleft)\\b(?=\\s[\\+|-]?\\d)"
         },
         { "include": "#numeric-literal" }
       ]
@@ -121,11 +121,11 @@
       "patterns": [
         {
           "name": "support.function",
-          "match": "(?<=alias\\s)\\w+"
+          "match": "(?<=alias\\s)[\\+|-]?\\w+"
         },
         {
           "name": "constant.regexp",
-          "match": "(?<=alias\\s\\w+\\s)\\w+"
+          "match": "(?<=alias\\s[\\+|-]?\\w+\\s)[\\+|-]?\\w+"
         }
       ]
     },
@@ -133,7 +133,7 @@
       "patterns": [
         {
           "name": "support.class",
-          "match": "(?i)(?:(?<=bind\\s)|(?<=bindtoggle\\s))(\")?(\\d|[a-z]|KEY|MOUSE_X|MOUSE_Y||MOUSE\\d?|MWHEELUP|MWHEELDOWN|KP_\\w+|LEFTARROW|UPARROW|RIGHTARROW|DOWNARROW|SPACE|SHIFT|RSHIFT|ALT|RALT|CTRL|RCTRL|TAB|INS|END|ESCAPE|SEMICOLON|BACKSPACE|HOME|END|F\\d{1,2}|PGUP|PGDN|PAUSE|\\/|`|\\'|\\[|\\]|\\.|\\-|\\=|,|\\\\)(\")?\\s"
+          "match": "(?i)(?:(?<=bind\\s)|(?<=bindtoggle\\s))(\")?(\\d|[a-z]|CAPSLOCK|KEY|MOUSE_X|MOUSE_Y||MOUSE\\d?|MWHEELUP|MWHEELDOWN|KP_\\w+|LEFTARROW|UPARROW|RIGHTARROW|DOWNARROW|SPACE|SHIFT|RSHIFT|ALT|RALT|CTRL|RCTRL|TAB|INS|END|ESCAPE|SEMICOLON|BACKSPACE|HOME|END|F\\d{1,2}|PGUP|PGDN|PAUSE|\\/|`|\\'|\\[|\\]|\\.|\\-|\\=|,|\\\\)(\")?\\s"
         }
       ]
     },
