@@ -15,6 +15,10 @@
       "patterns": [
         {
           "name": "string.quoted.double.cfg",
+          "match": "\""
+        },
+        {
+          "name": "string.quoted.double.cfg",
           "match": "\\;"
         },
         {
@@ -81,8 +85,8 @@
       "patterns": [
         { "include": "#buttons" },
         { "include": "#actions" },
-        { "include": "#CS-command" },
         { "include": "#sourcemod" },
+        { "include": "#CS-command" },
         { "include": "#movement" },
         { "include": "#log-flags" },
         { "include": "#alias" }
@@ -101,39 +105,47 @@
       "patterns": [
         {
           "name": "keyword.operator.quantifier.regexp",
-          "match": "\\blog_flags\\b"
+          "match": "(?i)\\blog_flags\\b"
         },
         {
           "name": "keyword.control.cfg",
-          "match": "(?<=log_flags\\s)\\w+"
+          "match": "(?i)(?<=log_flags\\s)\\w+"
         },
         {
           "name": "support.class.cfg",
-          "match": "(?<=log_flags\\s\\w+\\s)\\w+"
+          "match": "(?i)(?<=log_flags\\s\\w+\\s)\\w+"
         },
         {
           "name": "constant.language.cfg",
-          "match": "(?<=log_flags\\s\\w+(\\s\\w+)?\\s)([\\+|-]\\w+)"
+          "match": "(?i)(?<=log_flags\\s\\w+(\\s\\w+)?\\s)([\\+|-]\\w+)"
         }
       ]
     },
     "alias": {
       "patterns": [
         {
-          "name": "support.function",
-          "match": "(?<=alias\\s)[\\+|-]?\\w+"
+          "match": "(?i)(?:(?<=alias\\s))(\")?([\\+|-]?\\w+)(\")?",
+          "captures": {
+            "1": { "name": "string.quoted.double.cfg" },
+            "2": { "name": "support.function" },
+            "3": { "name": "string.quoted.double.cfg" }
+          }
         },
         {
           "name": "constant.regexp",
-          "match": "(?<=alias\\s[\\+|-]?\\w+\\s)[\\+|-]?\\w+"
+          "match": "(?i)(?<=alias\\s[\\+|-]?\\w+\\s)([\\+|-]?\\w+)"
         }
       ]
     },
     "buttons": {
       "patterns": [
         {
-          "name": "support.class",
-          "match": "(?i)(?:(?<=bind\\s)|(?<=bindtoggle\\s))(\")?(\\d|[a-z]|CAPSLOCK|KEY|MOUSE_X|MOUSE_Y||MOUSE\\d?|MWHEELUP|MWHEELDOWN|KP_\\w+|LEFTARROW|UPARROW|RIGHTARROW|DOWNARROW|SPACE|SHIFT|RSHIFT|ALT|RALT|CTRL|RCTRL|TAB|INS|END|ESCAPE|SEMICOLON|BACKSPACE|HOME|END|F\\d{1,2}|PGUP|PGDN|PAUSE|\\/|`|\\'|\\[|\\]|\\.|\\-|\\=|,|\\\\)(\")?\\s"
+          "match": "(?i)(?:(?<=bind\\s)|(?<=bindtoggle\\s))(\")?(\\d|[a-z]|CAPSLOCK|KEY|MOUSE_X|MOUSE_Y|MOUSE\\d?|MWHEELUP|MWHEELDOWN|KP_\\w+|LEFTARROW|UPARROW|RIGHTARROW|DOWNARROW|SPACE|SHIFT|RSHIFT|ALT|RALT|CTRL|RCTRL|TAB|INS|END|ESCAPE|SEMICOLON|BACKSPACE|HOME|END|F\\d{1,2}|PGUP|PGDN|PAUSE|\\/|`|\\'|\\[|\\]|\\.|\\-|\\=|,|\\\\)(\")?\\s",
+          "captures": {
+            "1": { "name": "string.quoted.double.cfg" },
+            "2": { "name": "support.class" },
+            "3": { "name": "string.quoted.double.cfg" }
+          }
         }
       ]
     },
