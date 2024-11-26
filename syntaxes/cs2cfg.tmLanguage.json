@@ -18,12 +18,12 @@
           "match": "\""
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "keyword.operator",
           "match": "\\;"
         },
         {
-          "name": "meta.template.expression",
-          "match": "\\/"
+          "name": "keyword.operator",
+          "match": "\\/|\\\\"
         },
         {
           "name": "string.quoted.double.cfg",
@@ -34,11 +34,11 @@
           "match": "\\~"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "keyword.operator",
           "match": "\\:"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "keyword.operator",
           "match": "\\."
         }
       ]
@@ -48,28 +48,36 @@
         {
           "name": "comment.line.double-slash.js",
           "begin": "(//)",
-          "end": "(?=^)"
+          "beginCaptures": { "1": { "name": "punctuation.definition.comment.js" } },
+          "end": "$",
+          "patterns": [
+            {
+              "name": "comment.content",
+              "match": ".+"
+            }
+          ]
         }
       ]
     },
     "function": {
-      "name": "variable.other.readwrite.js",
+      "name": "punctuation.definition.tag",
       "begin": "\"",
       "beginCaptures": { "0": { "name": "string.quoted.double.cfg" } },
       "end": "\"",
       "endCaptures": { "0": { "name": "string.quoted.double.cfg" } },
       "patterns": [
-        { "include": "#punctuation-semicolon" },
+        { "include": "#comment" },
         { "include": "#command" },
         { "include": "#numeric-literal" },
-        { "include": "#variable" }
+        { "include": "#variable" },
+        { "include": "#punctuation-semicolon" }
       ]
     },
     "variable": {
       "patterns": [
         {
           "name": "variable.other.readwrite.js",
-          "match": "([\\+|-]?[_$[:alpha:]][_$[:alnum:]]*)"
+          "match": "(?<!//)([\\+|-]?[_$[:alpha:]][_$[:alnum:]]*)"
         }
       ]
     },
@@ -87,6 +95,7 @@
         { "include": "#actions" },
         { "include": "#sourcemod" },
         { "include": "#CS-command" },
+        { "include": "#setinfo-pattern" },
         { "include": "#movement" },
         { "include": "#log-flags" },
         { "include": "#alias" }
@@ -101,12 +110,22 @@
         { "include": "#numeric-literal" }
       ]
     },
+    "setinfo-pattern": {
+      "patterns": [
+        { "match": "(?i)\\setinfo\\b" },
+        {
+          "name": "keyword.control.cfg",
+          "match": "(?i)(?<=setinfo\\s)([\\+|-]?\\w+)"
+        },
+        {
+          "name": "support.class.cfg",
+          "match": "(?i)(?<=setinfo\\s[\\+|-]?\\w+\\s)([\\+|-]?\\w+)"
+        }
+      ]
+    },
     "log-flags": {
       "patterns": [
-        {
-          "name": "keyword.operator.quantifier.regexp",
-          "match": "(?i)\\blog_flags\\b"
-        },
+        { "match": "(?i)\\blog_flags\\b" },
         {
           "name": "keyword.control.cfg",
           "match": "(?i)(?<=log_flags\\s)\\w+"
@@ -134,6 +153,14 @@
         {
           "name": "constant.regexp",
           "match": "(?i)(?<=alias\\s[\\+|-]?\\w+\\s)([\\+|-]?\\w+)"
+        },
+        {
+          "match": "(?i)(?<=alias\\s[\\+|-]?\\w+\\s)(\")([\\+|-]?\\w+)(\")",
+          "captures": {
+            "1": { "name": "string.quoted.double.cfg" },
+            "2": { "name": "constant.regexp" },
+            "3": { "name": "string.quoted.double.cfg" }
+          }
         }
       ]
     },
@@ -165,7 +192,7 @@
       "patterns": [
         {
           "name": "keyword.operator.quantifier.regexp",
-          "match": "(?i)\\b(sleep|blog_flags|echo|echoln|clear|exec|execifexists|exec_async|grep|setinfo|incrementvar|multvar|pwatchvar|toggle|cl_radial_radio_tab_(0|1|2)_text_(1|2|3|4|5|6|7|8))\\b"
+          "match": "(?i)\\b(sleep|log_flags|echo|echoln|clear|exec|execifexists|exec_async|grep|setinfo|incrementvar|multvar|pwatchvar|toggle|cl_radial_radio_tab_(0|1|2)_text_(1|2|3|4|5|6|7|8))\\b"
         }
       ]
     },
