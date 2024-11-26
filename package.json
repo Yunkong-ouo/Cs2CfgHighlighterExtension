@@ -31,22 +31,32 @@
   "contributes": {
     "languages": [
       {
-        "id": "cfg",
+        "id": "cs2 cfg",
         "aliases": [
-          "CS2 CFG",
-          "cs2cfg"
+          "CS2 CFG"
         ],
         "extensions": [
           ".cfg"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./cs2cfg-language-configuration.json"
+      },
+      {
+        "id": "csgo cfg",
+        "aliases": [
+          "CSGO CFG"
+        ]
       }
     ],
     "grammars": [
       {
-        "language": "cfg",
+        "language": "cs2 cfg",
         "scopeName": "source.cs2cfg",
         "path": "./syntaxes/cs2cfg.tmLanguage.json"
+      },
+      {
+        "language": "csgo cfg",
+        "scopeName": "source.csgocfg",
+        "path": "./syntaxes/csgocfg.tmLanguage.json"
       }
     ]
   }

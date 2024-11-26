@@ -85,7 +85,7 @@
       "patterns": [
         {
           "name": "constant.numeric",
-          "match": "(-?\\d(?:.\\d)?)"
+          "match": "([\\+|-]?\\d(?:.\\d)?)"
         }
       ]
     },
@@ -143,7 +143,7 @@
     "alias": {
       "patterns": [
         {
-          "match": "(?i)(?:(?<=alias\\s))(\")?([\\+|-]?\\w+)(\")?",
+          "match": "(?i)(?:(?<=alias\\s))(\")?(?<!//)([\\+|-]?[_$[:alpha:]][_$[:alnum:]]*)(\")?",
           "captures": {
             "1": { "name": "string.quoted.double.cfg" },
             "2": { "name": "support.function" },
@@ -152,15 +152,7 @@
         },
         {
           "name": "constant.regexp",
-          "match": "(?i)(?<=alias\\s[\\+|-]?\\w+\\s)([\\+|-]?\\w+)"
-        },
-        {
-          "match": "(?i)(?<=alias\\s[\\+|-]?\\w+\\s)(\")([\\+|-]?\\w+)(\")",
-          "captures": {
-            "1": { "name": "string.quoted.double.cfg" },
-            "2": { "name": "constant.regexp" },
-            "3": { "name": "string.quoted.double.cfg" }
-          }
+          "match": "(?i)(?<=alias\\s[\\+|-]?\\w+\\s)(?<!//)([\\+|-]?[_$[:alpha:]][_$[:alnum:]]*)"
         }
       ]
     },
