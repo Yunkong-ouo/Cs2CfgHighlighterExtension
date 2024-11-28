@@ -38,13 +38,14 @@
         "extensions": [
           ".cfg"
         ],
-        "configuration": "./cs2cfg-language-configuration.json"
+        "configuration": "./language-configuration.json"
       },
       {
         "id": "csgo cfg",
         "aliases": [
           "CSGO CFG"
-        ]
+        ],
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
