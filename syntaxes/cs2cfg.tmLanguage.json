@@ -34,12 +34,24 @@
           "match": "\\~"
         },
         {
-          "name": "keyword.operator",
+          "name": "string.quoted.double.cfg",
           "match": "\\:"
         },
         {
-          "name": "keyword.operator",
+          "name": "string.quoted.double.cfg",
           "match": "\\."
+        },
+        {
+          "name": "string.quoted.double.cfg",
+          "match": "\\[|\\]"
+        },
+        {
+          "name": "string.quoted.double.cfg",
+          "match": "\\(|\\)"
+        },
+        {
+          "name": "string.quoted.double.cfg",
+          "match": "\\="
         }
       ]
     },
@@ -68,8 +80,8 @@
       "patterns": [
         { "include": "#comment" },
         { "include": "#command" },
-        { "include": "#numeric-literal" },
         { "include": "#variable" },
+        { "include": "#numeric-literal" },
         { "include": "#punctuation-semicolon" }
       ]
     },
@@ -77,7 +89,7 @@
       "patterns": [
         {
           "name": "variable.other.readwrite.js",
-          "match": "(?<!//)([\\+|-]?[_$[:alpha:]][_$[:alnum:]]*)"
+          "match": "(?i)(?<!//)([\\+\\-]?[a-zA-Z0-9_\\u4e00-\\u9fa5][$a-zA-Z0-9_\\u4e00-\\u9fa5]*)"
         }
       ]
     },
@@ -105,21 +117,33 @@
       "patterns": [
         {
           "name": "constant.character.set.regexp",
-          "match": "(?i)\\b(forward|back|right|left|forwardback|rightleft)\\b(?=\\s[\\+|-]?\\d)"
+          "match": "(?i)\\b(duck|attack|sprint|jump|use|forward|back|right|left|forwardback|rightleft)\\b(?=\\s[\\+|-]?\\d)"
         },
-        { "include": "#numeric-literal" }
+        {
+          "name": "constant.numeric",
+          "match": "(?<=^|\\s)([-+]?\\d+(?:\\.\\d+)?)(?=\\s|$|;|\"|,)"
+        }
       ]
     },
     "setinfo-pattern": {
       "patterns": [
-        { "match": "(?i)\\setinfo\\b" },
+        { "match": "(?i)\\bsetinfo\\b" },
         {
           "name": "keyword.control.cfg",
-          "match": "(?i)(?<=setinfo\\s)([\\+|-]?\\w+)"
+          "match": "(?i)(?<=setinfo\\s)(\"?)(\\w+)(\"?)",
+          "captures": {
+            "1": { "name": "string.quoted.double.cfg" },
+            "2": { "name": "keyword.control.cfg" },
+            "3": { "name": "string.quoted.double.cfg" }
+          }
         },
         {
-          "name": "support.class.cfg",
-          "match": "(?i)(?<=setinfo\\s[\\+|-]?\\w+\\s)([\\+|-]?\\w+)"
+          "match": "(?i)(?<=setinfo\\s\"?\\w+\"?\\s)(\"?)(\\w+)(\"?)",
+          "captures": {
+            "1": { "name": "string.quoted.double.cfg" },
+            "2": { "name": "support.class.cfg" },
+            "3": { "name": "string.quoted.double.cfg" }
+          }
         }
       ]
     },
@@ -143,16 +167,17 @@
     "alias": {
       "patterns": [
         {
-          "match": "(?i)(?:(?<=alias\\s))(\")?(?<!//)([\\+|-]?[_$[:alpha:]][_$[:alnum:]]*)(\")?",
+          "match": "(?i)(?<=alias\\s)(\"?)([\\+\\-]?([0-9]|[\\$a-zA-Z_\\u4e00-\\u9fa5])[\\$a-zA-Z0-9_\\u4e00-\\u9fa5\\+\\-_]*)(\"?)",
           "captures": {
             "1": { "name": "string.quoted.double.cfg" },
             "2": { "name": "support.function" },
-            "3": { "name": "string.quoted.double.cfg" }
+            "3": { "name": "support.function" },
+            "4": { "name": "string.quoted.double.cfg" }
           }
         },
         {
           "name": "constant.regexp",
-          "match": "(?i)(?<=alias\\s[\\+|-]?\\w+\\s)(?<!//)([\\+|-]?[_$[:alpha:]][_$[:alnum:]]*)"
+          "match": "(?i)(?<=alias\\s[\\+\\-]?([0-9]|[\\$a-zA-Z_\\u4e00-\\u9fa5])[\\$a-zA-Z0-9_\\u4e00-\\u9fa5\\+\\-_]*\\s)([\\+\\-]?([0-9]|[\\$a-zA-Z_\\u4e00-\\u9fa5])[\\$a-zA-Z0-9_\\u4e00-\\u9fa5\\+\\-_]*)"
         }
       ]
     },
