@@ -38,7 +38,7 @@
           "match": "\\:"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "keyword.operator",
           "match": "\\."
         },
         {
@@ -79,17 +79,17 @@
       "endCaptures": { "0": { "name": "string.quoted.double.cfg" } },
       "patterns": [
         { "include": "#comment" },
+        { "include": "#punctuation-semicolon" },
         { "include": "#command" },
         { "include": "#variable" },
-        { "include": "#numeric-literal" },
-        { "include": "#punctuation-semicolon" }
+        { "include": "#numeric-literal" }
       ]
     },
     "variable": {
       "patterns": [
         {
           "name": "variable.other.readwrite.js",
-          "match": "(?i)(?<!//)([\\+\\-]?[a-zA-Z0-9_\\u4e00-\\u9fa5][$a-zA-Z0-9_\\u4e00-\\u9fa5]*)"
+          "match": "(?i)(?<!//)([\\+\\-\\$]?[a-zA-Z0-9_\\p{L}][$a-zA-Z0-9_\\p{L}]*)"
         }
       ]
     },
@@ -167,7 +167,7 @@
     "alias": {
       "patterns": [
         {
-          "match": "(?i)(?<=alias\\s)(\"?)([\\+\\-]?([0-9]|[\\$a-zA-Z_\\u4e00-\\u9fa5])[\\$a-zA-Z0-9_\\u4e00-\\u9fa5\\+\\-_]*)(\"?)",
+          "match": "(?i)(?<=alias\\s)(\"?)([\\+\\-]?([0-9]|[\\$a-zA-Z_\\p{L}])[\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)(\"?)",
           "captures": {
             "1": { "name": "string.quoted.double.cfg" },
             "2": { "name": "support.function" },
@@ -177,7 +177,7 @@
         },
         {
           "name": "constant.regexp",
-          "match": "(?i)(?<=alias\\s[\\+\\-]?([0-9]|[\\$a-zA-Z_\\u4e00-\\u9fa5])[\\$a-zA-Z0-9_\\u4e00-\\u9fa5\\+\\-_]*\\s)([\\+\\-]?([0-9]|[\\$a-zA-Z_\\u4e00-\\u9fa5])[\\$a-zA-Z0-9_\\u4e00-\\u9fa5\\+\\-_]*)"
+          "match": "(?i)(?<=alias\\s[\\+\\-]?([0-9]|[\\$a-zA-Z_\\p{L}])[\\$a-zA-Z0-9_\\p{L}\\+\\-_]*\\s)([\\+\\-]?([0-9]|[\\$a-zA-Z_\\p{L}])[\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)"
         }
       ]
     },
