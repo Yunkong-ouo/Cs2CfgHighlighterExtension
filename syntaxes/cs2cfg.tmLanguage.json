@@ -6,9 +6,8 @@
     { "include": "#comment" },
     { "include": "#command" },
     { "include": "#variable" },
-    { "include": "#numeric-literal" },
-    { "include": "#function" },
-    { "include": "#punctuation-semicolon" }
+    { "include": "#punctuation-semicolon" },
+    { "include": "#numeric-literal" }
   ],
   "repository": {
     "punctuation-semicolon": {
@@ -77,20 +76,6 @@
             }
           ]
         }
-      ]
-    },
-    "function": {
-      "name": "punctuation.definition.tag",
-      "begin": "\"",
-      "beginCaptures": { "0": { "name": "string.quoted.double.cfg" } },
-      "end": "\"",
-      "endCaptures": { "0": { "name": "string.quoted.double.cfg" } },
-      "patterns": [
-        { "include": "#comment" },
-        { "include": "#punctuation-semicolon" },
-        { "include": "#command" },
-        { "include": "#variable" },
-        { "include": "#numeric-literal" }
       ]
     },
     "variable": {
