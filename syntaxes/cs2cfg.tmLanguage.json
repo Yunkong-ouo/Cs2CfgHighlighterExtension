@@ -5,8 +5,8 @@
   "patterns": [
     { "include": "#comment" },
     { "include": "#command" },
-    { "include": "#numeric-literal" },
     { "include": "#variable" },
+    { "include": "#numeric-literal" },
     { "include": "#function" },
     { "include": "#punctuation-semicolon" }
   ],
@@ -52,6 +52,14 @@
         {
           "name": "string.quoted.double.cfg",
           "match": "\\="
+        },
+        {
+          "name": "string.quoted.double.cfg",
+          "match": "\\#"
+        },
+        {
+          "name": "string.quoted.double.cfg",
+          "match": "\\<|\\>"
         }
       ]
     },
@@ -89,7 +97,7 @@
       "patterns": [
         {
           "name": "variable.other.readwrite.js",
-          "match": "(?i)(?<!//)([\\+\\-\\$]?[a-zA-Z0-9_\\p{L}][$a-zA-Z0-9_\\p{L}]*)"
+          "match": "(?i)(?<!//)([\\+\\-]?[\\$a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)"
         }
       ]
     },
@@ -97,7 +105,7 @@
       "patterns": [
         {
           "name": "constant.numeric",
-          "match": "([\\+|-]?\\d(?:.\\d)?)"
+          "match": "(?i)(?<!//)([+-]?\\d(?:[_$]*))"
         }
       ]
     },
@@ -167,17 +175,16 @@
     "alias": {
       "patterns": [
         {
-          "match": "(?i)(?<=alias\\s)(\"?)([\\+\\-]?([0-9]|[\\$a-zA-Z_\\p{L}])[\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)(\"?)",
+          "match": "(?i)(?<!//)(?<=alias\\s)(\"?)([\\+\\-]?[\\$a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)(\"?)",
           "captures": {
             "1": { "name": "string.quoted.double.cfg" },
             "2": { "name": "support.function" },
-            "3": { "name": "support.function" },
-            "4": { "name": "string.quoted.double.cfg" }
+            "3": { "name": "string.quoted.double.cfg" }
           }
         },
         {
           "name": "constant.regexp",
-          "match": "(?i)(?<=alias\\s[\\+\\-]?([0-9]|[\\$a-zA-Z_\\p{L}])[\\$a-zA-Z0-9_\\p{L}\\+\\-_]*\\s)([\\+\\-]?([0-9]|[\\$a-zA-Z_\\p{L}])[\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)"
+          "match": "(?i)(?<!//)(?<=alias\\s[\\+\\-]?[\\$a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_]*\\s)([\\+\\-]?[\\$a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)"
         }
       ]
     },

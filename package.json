@@ -4,7 +4,7 @@
   "description": "高亮 CS2 CFG檔中的關鍵字",
   "icon": "images/CS2-Logo.png",
   "publisher": "Yunkong",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "engines": {
     "vscode": ">=1.74.0"
   },
