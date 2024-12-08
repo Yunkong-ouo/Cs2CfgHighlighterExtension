@@ -4,12 +4,12 @@
   "scopeName": "source.cs2cfg",
   "patterns": [
     { "include": "#comment" },
+    { "include": "#punctuation-semicolon" },
     { "include": "#command" },
     { "include": "#hash" },
     { "include": "#steam-id" },
-    { "include": "#variable" },
-    { "include": "#punctuation-semicolon" },
-    { "include": "#numeric-literal" }
+    { "include": "#numeric-literal" },
+    { "include": "#variable" }
   ],
   "repository": {
     "punctuation-semicolon": {
@@ -116,7 +116,15 @@
       "patterns": [
         {
           "name": "constant.numeric",
-          "match": "(?<!//)([+-]?\\d(?:[_$]*))"
+          "match": "(\"?)([+-]?\\d*(\\.\\d+)?([eE][+-]?\\d+)?)(\"?)$|^(\\s)([+-]?\\d*(\\.\\d+)?([eE][+-]?\\d+))$",
+          "captures": {
+            "1": { "name": "string.quoted.double.cfg" },
+            "2": { "name": "constant.numeric" },
+            "3": { "name": "constant.numeric" },
+            "4": { "name": "constant.numeric" },
+            "5": { "name": "string.quoted.double.cfg" },
+            "6": { "name": "constant.numeric" }
+          }
         }
       ]
     },
