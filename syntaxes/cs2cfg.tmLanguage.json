@@ -5,6 +5,8 @@
   "patterns": [
     { "include": "#comment" },
     { "include": "#command" },
+    { "include": "#hash" },
+    { "include": "#steam-id" },
     { "include": "#variable" },
     { "include": "#punctuation-semicolon" },
     { "include": "#numeric-literal" }
@@ -13,16 +15,24 @@
     "punctuation-semicolon": {
       "patterns": [
         {
-          "name": "string.quoted.double.cfg",
-          "match": "\""
-        },
-        {
           "name": "keyword.operator",
           "match": "\\;"
         },
         {
           "name": "keyword.operator",
           "match": "\\/|\\\\"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\."
+        },
+        {
+          "name": "string.quoted.double.cfg",
+          "match": "\""
+        },
+        {
+          "name": "string.quoted.double.cfg",
+          "match": "\\'"
         },
         {
           "name": "string.quoted.double.cfg",
@@ -35,10 +45,6 @@
         {
           "name": "string.quoted.double.cfg",
           "match": "\\:"
-        },
-        {
-          "name": "keyword.operator",
-          "match": "\\."
         },
         {
           "name": "string.quoted.double.cfg",
@@ -59,19 +65,23 @@
         {
           "name": "string.quoted.double.cfg",
           "match": "\\<|\\>"
+        },
+        {
+          "name": "string.quoted.double.cfg",
+          "match": "\\{|\\}"
         }
       ]
     },
     "comment": {
       "patterns": [
         {
-          "name": "comment.line.double-slash.js",
+          "name": "comment.line.double-slash",
           "begin": "(//)",
-          "beginCaptures": { "1": { "name": "punctuation.definition.comment.js" } },
+          "beginCaptures": { "1": { "name": "comment.line.double-slash" } },
           "end": "$",
           "patterns": [
             {
-              "name": "comment.content",
+              "name": "comment.line.double-slash",
               "match": ".+"
             }
           ]
@@ -86,22 +96,40 @@
         }
       ]
     },
+    "hash": {
+      "patterns": [
+        {
+          "name": "constant.numeric",
+          "match": "(?<![a-zA-Z0-9_])(\\b[a-fA-F0-9]{8,128}\\b)(?![a-zA-Z0-9_])"
+        }
+      ]
+    },
+    "steam-id": {
+      "patterns": [
+        {
+          "name": "constant.numeric",
+          "match": "\\b7656119[0-9]{10}\\b|STEAM_0:[01]:[0-9]+|U:[01]:[0-9]+\\b"
+        }
+      ]
+    },
     "numeric-literal": {
       "patterns": [
         {
           "name": "constant.numeric",
-          "match": "(?i)(?<!//)([+-]?\\d(?:[_$]*))"
+          "match": "(?<!//)([+-]?\\d(?:[_$]*))"
         }
       ]
     },
     "command": {
       "patterns": [
+        { "include": "#hash" },
+        { "include": "#steam-id" },
         { "include": "#buttons" },
+        { "include": "#movement" },
         { "include": "#actions" },
         { "include": "#sourcemod" },
         { "include": "#CS-command" },
         { "include": "#setinfo-pattern" },
-        { "include": "#movement" },
         { "include": "#log-flags" },
         { "include": "#alias" }
       ]
@@ -110,11 +138,11 @@
       "patterns": [
         {
           "name": "constant.character.set.regexp",
-          "match": "(?i)\\b(duck|attack|sprint|jump|use|forward|back|right|left|forwardback|rightleft)\\b(?=\\s[\\+|-]?\\d)"
+          "match": "(?i)\\b(yaw|pitch|duck|attack|sprint|jump|use|forward|back|right|left|forwardback|rightleft)\\b(?=\\s[\\+\\-]?\\d+(\\.\\d+)?(\\s|$|;))"
         },
         {
           "name": "constant.numeric",
-          "match": "(?<=^|\\s)([-+]?\\d+(?:\\.\\d+)?)(?=\\s|$|;|\"|,)"
+          "match": "(?<=^|\\s)([\\+\\-]?\\d+(\\.\\d+)?(?:[eE][\\+\\-]?\\d+)?)(?=\\s|$|;|\"|,)"
         }
       ]
     },
@@ -176,7 +204,7 @@
     "buttons": {
       "patterns": [
         {
-          "match": "(?i)(?:(?<=bind\\s)|(?<=bindtoggle\\s))(\")?(\\d|[a-z]|CAPSLOCK|KEY|MOUSE_X|MOUSE_Y|MOUSE\\d?|MWHEELUP|MWHEELDOWN|KP_\\w+|LEFTARROW|UPARROW|RIGHTARROW|DOWNARROW|SPACE|SHIFT|RSHIFT|ALT|RALT|CTRL|RCTRL|TAB|INS|END|ESCAPE|SEMICOLON|BACKSPACE|HOME|END|F\\d{1,2}|PGUP|PGDN|PAUSE|\\/|`|\\'|\\[|\\]|\\.|\\-|\\=|,|\\\\)(\")?\\s",
+          "match": "(?i)(?:(?<=bind\\s)|(?<=bindtoggle\\s))(\")?(\\d|[a-z]|capslock|key|mouse_x|mouse_y|mouse\\d?|mwheelup|mwheeldown|kp_\\w+|leftarrow|uparrow|rightarrow|downarrow|space|shift|rshift|alt|ralt|ctrl|rctrl|tab|ins|end|escape|semicolon|backspace|home|end|f\\d{1,2}|pgup|pgdn|pause|\\/|`|\\'|\\[|\\]|\\.|\\-|\\=|,|\\\\)(\")?\\s",
           "captures": {
             "1": { "name": "string.quoted.double.cfg" },
             "2": { "name": "support.class" },
@@ -209,7 +237,11 @@
       "patterns": [
         {
           "name": "keyword.control.cfg",
-          "match": "(?i)\\b(give|ammo_grenade_limit_total|binddefaults|player_ping|alias|bind|bind_mac|bindtoggle|toggle|unbind|unbindall|volume|crosshair|sensitivity|rate|map|deathmatch|tracer_extra|in_usekeyboardsampletime|joystick|fast_fogvolume|incrementvar|joy_\\w+|fov_\\w+|viewmodel\\w+|m_\\w+|map_\\w+|r_\\w+|net_\\w+|cl_\\w+|tf_\\w+|sv_\\w+|con_\\w+|obj_\\w+|hud_\\w+|sixense_\\w+|windows_\\w+|snd_\\w+|mat_\\w+|mp_\\w+|flex_\\w+|lod_\\w+|rope_\\w+|glow_\\w+|demo_\\w+|func_\\w+|violence_\\w+|dsp_\\w+|props_\\w+|ragdoll_\\w+|ai_\\w+|g_\\w+|cam_\\w+|sb_\\w+|mod_\\w+|nav_\\w+|filesystem_\\w+|budget__\\w+|c_\\w+|cache_\\w+|replay_\\w+|vr_\\w+|pyro_\\w+|nb_\\w+|ent_\\w+|fire_\\w+|fog_\\w+|ifm_\\w+|ds_\\w+|host_\\w+|cc_\\w+|g_\\w+|gameui_\\w+|full|blink_duration|bloodspray|bot|bot_\\w+|mm_\\w+|mc_\\w+|spec_\\w+|zoom_\\w+|gameinstructor_\\w+|fps_\\w+|game_\\w+|voice_\\w+|sm_\\w+)\\b"
+          "match": "(?i)\\b(joy_\\w+|fov_\\w+|viewmodel\\w+|m_\\w+|map_\\w+|r_\\w+|net_\\w+|cl_\\w+|tf_\\w+|sv_\\w+|con_\\w+|obj_\\w+|hud_\\w+|sixense_\\w+|windows_\\w+|snd_\\w+|mat_\\w+|mp_\\w+|flex_\\w+|lod_\\w+|rope_\\w+|glow_\\w+|demo_\\w+|func_\\w+|violence_\\w+|dsp_\\w+|props_\\w+|ragdoll_\\w+|ai_\\w+|g_\\w+|cam_\\w+|sb_\\w+|mod_\\w+|nav_\\w+|filesystem_\\w+|budget__\\w+|c_\\w+|cache_\\w+|replay_\\w+|vr_\\w+|pyro_\\w+|nb_\\w+|ent_\\w+|fire_\\w+|fog_\\w+|ifm_\\w+|ds_\\w+|host_\\w+|cc_\\w+|g_\\w+|gameui_\\w+|bot_\\w+|mm_\\w+|mc_\\w+|spec_\\w+|zoom_\\w+|gameinstructor_\\w+|fps_\\w+|game_\\w+|voice_\\w+|sm_\\w+)\\b"
+        },
+        {
+          "name": "keyword.control.cfg",
+          "match": "(?i)\\b(give|ammo_grenade_limit_total|binddefaults|player_ping|alias|bind|bind_mac|bindtoggle|toggle|unbind|unbindall|volume|crosshair|sensitivity|rate|map|deathmatch|tracer_extra|in_usekeyboardsampletime|joystick|fast_fogvolume|incrementvar|full|blink_duration|bloodspray|bot)\\b"
         }
       ]
     }
