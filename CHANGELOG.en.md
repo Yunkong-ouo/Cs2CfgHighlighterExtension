@@ -6,6 +6,9 @@
 
 # Changelog
 
+## [1.4.6]
+- Added some new instructions
+
 ## [1.4.5]
 - Fixed issues related to numbers:
   - Resolved conflicts with double quotation marks.
