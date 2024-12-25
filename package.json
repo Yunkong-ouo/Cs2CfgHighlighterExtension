@@ -1,10 +1,10 @@
 {
   "name": "cs2-cfg-highlighter",
   "displayName": "CS2 CFG Highlighter",
-  "description": "高亮 CS2 CFG檔中的關鍵字",
+  "description": "Source 2 CFG Highlighter",
   "icon": "images/CS2-Logo.png",
   "publisher": "Yunkong",
-  "version": "1.4.6",
+  "version": "1.4.8",
   "engines": {
     "vscode": ">=1.74.0"
   },
@@ -26,7 +26,8 @@
     "csgohighlight",
     "cs2 highlight",
     "csgo highlight",
-    "cs"
+    "cs",
+    "source 2"
   ],
   "contributes": {
     "languages": [
@@ -36,14 +37,20 @@
           "CS2 CFG"
         ],
         "extensions": [
-          ".cfg"
+          ".cfg",
+          ".dat",
+          ".certx",
+          ".esu"
         ],
         "configuration": "./language-configuration.json"
       },
       {
-        "id": "csgo cfg",
+        "id": "cs2script",
         "aliases": [
-          "CSGO CFG"
+          "CS2 Script"
+        ],
+        "extensions": [
+          ".cs2script"
         ],
         "configuration": "./language-configuration.json"
       }
@@ -55,9 +62,9 @@
         "path": "./syntaxes/cs2cfg.tmLanguage.json"
       },
       {
-        "language": "csgo cfg",
-        "scopeName": "source.csgocfg",
-        "path": "./syntaxes/csgocfg.tmLanguage.json"
+        "language": "cs2script",
+        "scopeName": "source.cs2script",
+        "path": "./syntaxes/cs2script.tmLanguage.json"
       }
     ]
   }

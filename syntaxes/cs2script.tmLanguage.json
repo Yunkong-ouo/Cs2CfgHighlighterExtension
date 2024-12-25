@@ -1,0 +1,86 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "CSGO CFG",
+  "scopeName": "source.cs2script",
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#actions" },
+    { "include": "#movement" },
+    { "include": "#variable1" },
+    { "include": "#variable2" }
+  ],
+  "repository": {
+    "Keywords": {
+      "patterns": [
+        {
+          "name": "support.function",
+          "match": "(?i)\\b(123)\\b"
+        }
+      ]
+    },
+    "variable1": {
+      "patterns": [
+        {
+          "name": "support.function",
+          "match": "(?i)^\\s*\\S+"
+        },
+        {
+          "name": "variable.other.readwrite.cfg",
+          "match": "(?i)^\\s*\\S+\\s+(\\S+)"
+        }
+      ]
+    },
+    "variable2": {
+      "patterns": [
+        {
+          "name": "variable.other.readwrite.js",
+          "match": "(?i)(?<!//)([\\+|-]?[\\$a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)"
+        }
+      ]
+    },
+    "actions": {
+      "patterns": [
+        {
+          "name": "constant.language",
+          "match": "(?i)([\\+|-]turnright|[\\+|-]turnleft|[\\+|-]attack|[\\+|-]attack2|[\\+|-]jump|[\\+|-]sprint|[\\+|-]use|[\\+|-]duck|[\\+|-]reload|[\\+|-]forward|[\\+|-]back|[\\+|-]left|[\\+|-]right|[\\+|-]lookatweapon|[\\+|-]noclip|[\\+|-]radialradio(2|3)|[\\+|-]radialradio)\\b"
+        },
+        {
+          "name": "constant.language",
+          "match": "(?i)\\b(yaw|pitch|invnext|invprev|slot\\d{1,2})\\b"
+        }
+      ]
+    },
+    "movement": {
+      "patterns": [
+        {
+          "name": "constant.language",
+          "match": "(?i)\\b(turnleft|turnright|yaw|pitch|duck|attack|attack2|sprint|jump|use|forward|back|right|left|forwardback|rightleft)\\b"
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash",
+          "begin": "//",
+          "end": "$"
+        }
+      ]
+    },
+    "comment2": {
+      "patterns": [
+        {
+          "name": "comment.block.java",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "patterns": [
+            {
+              "name": "comment.block.documentation",
+              "match": "\\*\\*"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
