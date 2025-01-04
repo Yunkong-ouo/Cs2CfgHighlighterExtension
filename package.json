@@ -4,7 +4,7 @@
   "description": "Source 2 CFG Highlighter",
   "icon": "images/CS2-Logo.png",
   "publisher": "Yunkong",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "engines": {
     "vscode": ">=1.74.0"
   },

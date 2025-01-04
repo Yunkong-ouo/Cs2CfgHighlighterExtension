@@ -4,17 +4,60 @@
   "scopeName": "source.cs2script",
   "patterns": [
     { "include": "#comment" },
-    { "include": "#actions" },
-    { "include": "#movement" },
+    { "include": "#punctuation-semicolon" },
+    { "include": "#actions1" },
+    { "include": "#actions2" },
+    { "include": "#number" },
     { "include": "#variable1" },
     { "include": "#variable2" }
   ],
   "repository": {
-    "Keywords": {
+    "comment": {
       "patterns": [
         {
-          "name": "support.function",
-          "match": "(?i)\\b(123)\\b"
+          "name": "comment.line.double-slash",
+          "begin": "^\\s*//\\s*",
+          "end": "$"
+        }
+      ]
+    },
+    "actions1": {
+      "patterns": [
+        {
+          "name": "constant.language",
+          "match": "(?i)(?<!//)\\b(yaw|pitch|invnext|invprev|slot\\d{1,2})\\b"
+        },
+        {
+          "name": "constant.language",
+          "match": "(?i)(?<!//)^\\s*\\b(yaw|pitch|invnext|invprev|slot\\d{1,2})\\b"
+        },
+        {
+          "name": "constant.language",
+          "match": "(?i)(?<!//)tick\\((\\d+)\\)\\s*$"
+        },
+        {
+          "name": "constant.language",
+          "match": "(?i)(?<!//)^\\s*tick\\((\\d+)\\)\\s*$"
+        }
+      ]
+    },
+    "actions2": {
+      "patterns": [
+        {
+          "name": "constant.language",
+          "match": "(?i)(?<!//)([\\+|-]turnright|[\\+|-]turnleft|[\\+|-]attack|[\\+|-]attack2|[\\+|-]jump|[\\+|-]sprint|[\\+|-]use|[\\+|-]duck|[\\+|-]reload|[\\+|-]forward|[\\+|-]back|[\\+|-]left|[\\+|-]right|[\\+|-]lookatweapon|[\\+|-]noclip|[\\+|-]radialradio(2|3)|[\\+|-]radialradio)\\b"
+        },
+        {
+          "name": "constant.language",
+          "match": "(?i)(?<!//)^\\s*([\\+|-]turnright|[\\+|-]turnleft|[\\+|-]attack|[\\+|-]attack2|[\\+|-]jump|[\\+|-]sprint|[\\+|-]use|[\\+|-]duck|[\\+|-]reload|[\\+|-]forward|[\\+|-]back|[\\+|-]left|[\\+|-]right|[\\+|-]lookatweapon|[\\+|-]noclip|[\\+|-]radialradio(2|3)|[\\+|-]radialradio)\\b"
+        },
+        {
+          "name": "constant.language",
+          "match": "(?i)(?<!//)\\b(turnleft|turnright|yaw|pitch|duck|attack|attack2|sprint|jump|use|forward|back|right|left|forwardback|rightleft)\\b"
+        },
+        {
+          "name": "constant.language",
+          "match": "(?i)(?<!//)^\\s*\\b(turnleft|turnright|yaw|pitch|duck|attack|attack2|sprint|jump|use|forward|back|right|left|forwardback|rightleft)\\b"
         }
       ]
     },
@@ -22,11 +65,7 @@
       "patterns": [
         {
           "name": "support.function",
-          "match": "(?i)^\\s*\\S+"
-        },
-        {
-          "name": "variable.other.readwrite.cfg",
-          "match": "(?i)^\\s*\\S+\\s+(\\S+)"
+          "match": "(?i)(?<!//)^\\s*(\\S+)"
         }
       ]
     },
@@ -38,47 +77,71 @@
         }
       ]
     },
-    "actions": {
+    "number": {
       "patterns": [
         {
-          "name": "constant.language",
-          "match": "(?i)([\\+|-]turnright|[\\+|-]turnleft|[\\+|-]attack|[\\+|-]attack2|[\\+|-]jump|[\\+|-]sprint|[\\+|-]use|[\\+|-]duck|[\\+|-]reload|[\\+|-]forward|[\\+|-]back|[\\+|-]left|[\\+|-]right|[\\+|-]lookatweapon|[\\+|-]noclip|[\\+|-]radialradio(2|3)|[\\+|-]radialradio)\\b"
+          "name": "constant.numeric",
+          "match": "(?<=^|\\s)([\\+|-]?\\d+(\\.\\d+)?(?:[eE][\\+|-]?\\d+)?)(?=\\s|$|;|\"|,)"
+        }
+      ]
+    },
+    "punctuation-semicolon": {
+      "patterns": [
+        {
+          "name": "keyword.operator",
+          "match": "\\;"
         },
         {
-          "name": "constant.language",
-          "match": "(?i)\\b(yaw|pitch|invnext|invprev|slot\\d{1,2})\\b"
-        }
-      ]
-    },
-    "movement": {
-      "patterns": [
+          "name": "keyword.operator",
+          "match": "\\/|\\\\"
+        },
         {
-          "name": "constant.language",
-          "match": "(?i)\\b(turnleft|turnright|yaw|pitch|duck|attack|attack2|sprint|jump|use|forward|back|right|left|forwardback|rightleft)\\b"
-        }
-      ]
-    },
-    "comment": {
-      "patterns": [
+          "name": "keyword.operator",
+          "match": "\\."
+        },
         {
-          "name": "comment.line.double-slash",
-          "begin": "//",
-          "end": "$"
-        }
-      ]
-    },
-    "comment2": {
-      "patterns": [
+          "name": "keyword.operator",
+          "match": "\""
+        },
         {
-          "name": "comment.block.java",
-          "begin": "/\\*",
-          "end": "\\*/",
-          "patterns": [
-            {
-              "name": "comment.block.documentation",
-              "match": "\\*\\*"
-            }
-          ]
+          "name": "keyword.operator",
+          "match": "\\'"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\|"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\~"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\:"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\[|\\]"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\(|\\)"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\="
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\#"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\<|\\>"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\{|\\}"
         }
       ]
     }

@@ -221,7 +221,7 @@
         },
         {
           "name": "constant.language",
-          "match": "(?i)\\b(yaw|pitch|say|say_team|say_party|lastinv|load_itempreset|voicemenu|voice_menu_\\d|join_class|vote|changeclass|changeteam|open_charinfo_\\w+|show_quest_log|disguiseteam|cancelselect|pause|quit|toggleconsole|buy|buymenu|radio|radio1|radio2|radio3|drop|teammenu|messagemode|messagemode2|disconnect|developer|playvol|screenshot|save_replay|askconnect_accept|abuse_report_queue|name|lastdisguise|dropitem|centerview|showmapinfo|inspect|invnext|invprev|wait|taunt_by_name|slot\\d{1,2})\\b"
+          "match": "(?i)\\b(yaw|pitch|say|say_team|say_party|lastinv|load_itempreset|voicemenu|voice_menu_\\d|join_class|vote|changeclass|changeteam|open_charinfo_\\w+|show_quest_log|disguiseteam|cancelselect|pause|quit|toggleconsole|buy|buymenu|radio|radio(1|2|3)|drop|teammenu|messagemode|messagemode2|disconnect|developer|playvol|screenshot|save_replay|askconnect_accept|abuse_report_queue|name|lastdisguise|dropitem|centerview|showmapinfo|inspect|invnext|invprev|wait|taunt_by_name|slot\\d{1,2})\\b"
         }
       ]
     },
@@ -241,7 +241,7 @@
         },
         {
           "name": "keyword.control.cfg",
-          "match": "(?i)\\b(status|kill|stopsound|firstperson|thirdperson|buddha|weapon_accuracy_nospread|cmd|give|ammo_grenade_limit_total|binddefaults|player_ping|alias|bind|bind_mac|bindtoggle|toggle|unbind|unbindall|volume|crosshair|sensitivity|rate|map|deathmatch|tracer_extra|in_usekeyboardsampletime|joystick|fast_fogvolume|incrementvar|full|blink_duration|bloodspray|bot)\\b"
+          "match": "(?i)\\b(secondary(0|1|2|3|4)|midtier(0|1|2|3|4)|rifle(0|1|2|3|4)|status|kill|stopsound|firstperson|thirdperson|buddha|weapon_accuracy_nospread|cmd|give|ammo_grenade_limit_total|binddefaults|player_ping|alias|bind|bind_mac|bindtoggle|toggle|unbind|unbindall|volume|crosshair|sensitivity|rate|map|deathmatch|tracer_extra|in_usekeyboardsampletime|joystick|fast_fogvolume|incrementvar|full|blink_duration|bloodspray|bot)\\b"
         }
       ]
     }

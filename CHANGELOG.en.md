@@ -6,6 +6,9 @@
 
 # Changelog
 
+## [1.4.9]
+- Fixed the conflict between comments and syntax highlighting in cs2script.
+
 ## [1.4.8]
 - Fixed cs2script highlighting and added some matches.
 
