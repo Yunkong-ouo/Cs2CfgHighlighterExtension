@@ -6,6 +6,17 @@
 
 # 更新日誌
 
+## [1.5.0]  
+- 新增指令：  
+  - `getpos_exact`  
+  - `getpos`  
+  - `setpos`  
+  - `setang`  
+  - `setpos_player`  
+  - `setpos_exact`  
+  - `setang_exact`  
+  - `play`
+
 ## [1.4.9]
 - 修正了 cs2script 的註解和高亮衝突。
 

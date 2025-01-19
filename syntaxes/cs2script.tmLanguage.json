@@ -7,6 +7,7 @@
     { "include": "#punctuation-semicolon" },
     { "include": "#actions1" },
     { "include": "#actions2" },
+    { "include": "#CS-command" },
     { "include": "#number" },
     { "include": "#variable1" },
     { "include": "#variable2" }
@@ -58,6 +59,18 @@
         {
           "name": "constant.language",
           "match": "(?i)(?<!//)^\\s*\\b(turnleft|turnright|yaw|pitch|duck|attack|attack2|sprint|jump|use|forward|back|right|left|forwardback|rightleft)\\b"
+        }
+      ]
+    },
+    "CS-command": {
+      "patterns": [
+        {
+          "name": "keyword.control.cfg",
+          "match": "(?i)(?<!//)\\b(getpos_exact|getpos|setpos|setang|setpos_player|setpos_exact|setang_exact|play)\\b"
+        },
+        {
+          "name": "keyword.control.cfg",
+          "match": "(?i)(?<!//)^\\s*\\b(getpos_exact|getpos|setpos|setang|setpos_player|setpos_exact|setang_exact|play)\\b"
         }
       ]
     },

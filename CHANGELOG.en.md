@@ -6,6 +6,17 @@
 
 # Changelog
 
+## [1.5.0]  
+- Added commands:  
+  - `getpos_exact`  
+  - `getpos`  
+  - `setpos`  
+  - `setang`  
+  - `setpos_player`  
+  - `setpos_exact`  
+  - `setang_exact`  
+  - `play`
+
 ## [1.4.9]
 - Fixed the conflict between comments and syntax highlighting in cs2script.
 

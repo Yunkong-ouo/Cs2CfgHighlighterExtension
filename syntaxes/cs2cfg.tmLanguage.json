@@ -241,7 +241,7 @@
         },
         {
           "name": "keyword.control.cfg",
-          "match": "(?i)\\b(secondary(0|1|2|3|4)|midtier(0|1|2|3|4)|rifle(0|1|2|3|4)|status|kill|stopsound|firstperson|thirdperson|buddha|weapon_accuracy_nospread|cmd|give|ammo_grenade_limit_total|binddefaults|player_ping|alias|bind|bind_mac|bindtoggle|toggle|unbind|unbindall|volume|crosshair|sensitivity|rate|map|deathmatch|tracer_extra|in_usekeyboardsampletime|joystick|fast_fogvolume|incrementvar|full|blink_duration|bloodspray|bot)\\b"
+          "match": "(?i)\\b(getpos_exact|getpos|setpos|setang|setpos_player|setpos_exact|setang_exact|play|secondary(0|1|2|3|4)|midtier(0|1|2|3|4)|rifle(0|1|2|3|4)|status|kill|stopsound|firstperson|thirdperson|buddha|weapon_accuracy_nospread|cmd|give|ammo_grenade_limit_total|binddefaults|player_ping|alias|bind|bind_mac|bindtoggle|toggle|unbind|unbindall|volume|crosshair|sensitivity|rate|map|deathmatch|tracer_extra|in_usekeyboardsampletime|joystick|fast_fogvolume|incrementvar|full|blink_duration|bloodspray|bot)\\b"
         }
       ]
     }
