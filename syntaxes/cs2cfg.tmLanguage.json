@@ -85,7 +85,7 @@
       "patterns": [
         {
           "name": "variable.other.readwrite.js",
-          "match": "(?i)(?<!//)([+-]?[\\$a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)"
+          "match": "(?i)(?<!//)([+-]?[\\$\\%a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_\\%]*)"
         }
       ]
     },
@@ -188,7 +188,7 @@
     "alias": {
       "patterns": [
         {
-          "match": "(?i)(?<!//)(?<=alias\\s)(\"?)([+-]?[\\$a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)(\"?)",
+          "match": "(?i)(?<!//)(?<=alias\\s)(\"?)([+-]?[\\$\\%a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_\\%]*)(\"?)",
           "captures": {
             "1": { "name": "string.quoted.double.cfg" },
             "2": { "name": "support.function" },
@@ -197,7 +197,7 @@
         },
         {
           "name": "constant.regexp",
-          "match": "(?i)(?<!//)(?<=alias\\s[+-]?[\\$a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_]*\\s)([+-]?[\\$a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_]*)"
+          "match": "(?i)(?<!//)(?<=alias\\s[+-]?[\\$\\%a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_\\%]*\\s)([+-]?[\\$\\%a-zA-Z0-9_\\p{L}][\\$a-zA-Z0-9_\\p{L}\\+\\-_\\%]*)"
         }
       ]
     },
@@ -217,7 +217,7 @@
       "patterns": [
         {
           "name": "constant.language",
-          "match": "(?i)([\\+|-]turnright|[\\+|-]turnleft|[\\+|-]attack|[\\+|-]attack2|[\\+|-]jump|[\\+|-]sprint|[\\+|-]use|[\\+|-]duck|[\\+|-]reload|[\\+|-]forward|[\\+|-]back|[\\+|-]left|[\\+|-]right|[\\+|-]lookatweapon|[\\+|-]noclip|[\\+|-]radialradio(2|3)|[\\+|-]radialradio)\\b"
+          "match": "(?i)([\\+|-]showscores|[\\+|-]turnright|[\\+|-]turnleft|[\\+|-]attack|[\\+|-]attack2|[\\+|-]jump|[\\+|-]sprint|[\\+|-]use|[\\+|-]duck|[\\+|-]reload|[\\+|-]forward|[\\+|-]back|[\\+|-]left|[\\+|-]right|[\\+|-]lookatweapon|[\\+|-]noclip|[\\+|-]radialradio(2|3)|[\\+|-]radialradio)\\b"
         },
         {
           "name": "constant.language",
@@ -241,7 +241,7 @@
         },
         {
           "name": "keyword.control.cfg",
-          "match": "(?i)\\b(getpos_exact|getpos|setpos|setang|setpos_player|setpos_exact|setang_exact|play|secondary(0|1|2|3|4)|midtier(0|1|2|3|4)|rifle(0|1|2|3|4)|status|kill|stopsound|firstperson|thirdperson|buddha|weapon_accuracy_nospread|cmd|give|ammo_grenade_limit_total|binddefaults|player_ping|alias|bind|bind_mac|bindtoggle|toggle|unbind|unbindall|volume|crosshair|sensitivity|rate|map|deathmatch|tracer_extra|in_usekeyboardsampletime|joystick|fast_fogvolume|incrementvar|full|blink_duration|bloodspray|bot)\\b"
+          "match": "(?i)\\b(ignoremsg|getpos_exact|getpos|setpos|setang|setpos_player|setpos_exact|setang_exact|play|secondary(0|1|2|3|4)|midtier(0|1|2|3|4)|rifle(0|1|2|3|4)|status|kill|stopsound|firstperson|thirdperson|buddha|weapon_accuracy_nospread|cmd|give|ammo_grenade_limit_total|binddefaults|player_ping|alias|bind|bind_mac|bindtoggle|toggle|unbind|unbindall|volume|crosshair|sensitivity|rate|map|deathmatch|tracer_extra|in_usekeyboardsampletime|joystick|fast_fogvolume|incrementvar|full|blink_duration|bloodspray|bot)\\b"
         }
       ]
     }

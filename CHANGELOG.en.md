@@ -6,6 +6,11 @@
 
 # Changelog
 
+## [1.5.1]  
+- Added command:  
+  - `ignoremsg`  
+- Fixed an issue where alias could not recognize `%`
+
 ## [1.5.0]  
 - Added commands:  
   - `getpos_exact`  
