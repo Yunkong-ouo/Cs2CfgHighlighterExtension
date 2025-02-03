@@ -6,20 +6,29 @@
 
 # 更新日誌
 
-## [1.5.1]  
-- 新增指令：  
-  - `ignoremsg`  
+## [1.5.2]
+- 優化匹配邏輯：
+  - 數字匹配（numeric-literal）
+  - alias 匹配（alias）
+  - setinfo 匹配（setinfo-pattern）
+- 更新 README 文本
+- 新增指令：
+  - quickinv
+
+## [1.5.1]
+- 新增指令：
+  - `ignoremsg`
 - 修復了 alias 無法識別 `%` 的問題
 
-## [1.5.0]  
-- 新增指令：  
-  - `getpos_exact`  
-  - `getpos`  
-  - `setpos`  
-  - `setang`  
-  - `setpos_player`  
-  - `setpos_exact`  
-  - `setang_exact`  
+## [1.5.0]
+- 新增指令：
+  - `getpos_exact`
+  - `getpos`
+  - `setpos`
+  - `setang`
+  - `setpos_player`
+  - `setpos_exact`
+  - `setang_exact`
   - `play`
 
 ## [1.4.9]

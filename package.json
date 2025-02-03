@@ -4,7 +4,7 @@
   "description": "Source 2 CFG Highlighter",
   "icon": "images/CS2-Logo.png",
   "publisher": "Yunkong",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "engines": {
     "vscode": ">=1.74.0"
   },
@@ -17,17 +17,12 @@
   },
   "enableTelemetry": false,
   "keywords": [
-    "cs2",
-    "csgo",
-    "cfg",
-    "highlight",
-    "CS2高亮",
-    "cs2highlight",
-    "csgohighlight",
-    "cs2 highlight",
-    "csgo highlight",
-    "cs",
-    "source 2"
+    "CS2 CFG Highlighter",
+    "CS2 CFG 高亮",
+    "CS2",
+    "CFG",
+    "CS2 CFG",
+    "CS2CFG"
   ],
   "contributes": {
     "languages": [

@@ -6,6 +6,15 @@
 
 # Changelog
 
+## [1.5.2]
+- Optimized matching logic:
+  - Numeric matching (numeric-literal)
+  - Alias matching (alias)
+  - Setinfo matching (setinfo-pattern)
+- Updated README text
+- Added command:
+  - quickinv
+
 ## [1.5.1]  
 - Added command:  
   - `ignoremsg`  

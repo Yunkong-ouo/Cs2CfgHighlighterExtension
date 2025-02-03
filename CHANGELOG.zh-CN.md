@@ -6,6 +6,15 @@
 
 # 更新日志
 
+## [1.5.2]
+- 优化匹配逻辑：
+  - 数字匹配（numeric-literal）
+  - alias 匹配（alias）
+  - setinfo 匹配（setinfo-pattern）
+- 更新 README 文本
+- 新增指令：
+  - quickinv
+
 ## [1.5.1]  
 - 新增指令：  
   - `ignoremsg`  
