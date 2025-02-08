@@ -27,47 +27,47 @@
           "match": "\\."
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\""
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\\'"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\\|"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\\~"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\\:"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\\[|\\]"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\\(|\\)"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\\="
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\\#"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\\<|\\>"
         },
         {
-          "name": "string.quoted.double.cfg",
+          "name": "string.quoted.double",
           "match": "\\{|\\}"
         }
       ]
@@ -85,7 +85,7 @@
       "patterns": [
         {
           "name": "variable.other.readwrite.js",
-          "match": "(?i)(?<!//)([\\w\\p{L}\\$%+-][\\w\\p{L}\\$%+-]*)"
+          "match": "(?i)(?<!//)([\\w\\p{L}\\$%+-.~*][\\w\\p{L}\\$%+-.~*]*)"
         }
       ]
     },
@@ -111,9 +111,9 @@
           "name": "constant.numeric",
           "match": "(\"?)([+-]?\\d*(\\.\\d+)?([eE][+-]?\\d+)?)(\"?)$|^(\\s)([+-]?\\d*(\\.\\d+)?([eE][+-]?\\d+))$",
           "captures": {
-            "1": { "name": "string.quoted.double.cfg" },
+            "1": { "name": "string.quoted.double" },
             "4": { "name": "constant.numeric" },
-            "5": { "name": "string.quoted.double.cfg" },
+            "5": { "name": "string.quoted.double" },
             "7": { "name": "constant.numeric" }
           }
         }
@@ -121,6 +121,7 @@
     },
     "command": {
       "patterns": [
+        { "include": "#exec" },
         { "include": "#hash" },
         { "include": "#steam-id" },
         { "include": "#buttons" },
@@ -148,21 +149,21 @@
     "setinfo-pattern": {
       "patterns": [
         {
-          "name": "keyword.control.cfg",
-          "match": "(?i)(?<!//)(?<=setinfo\\s)(\"?)([\\w\\p{L}\\$+-]+)(\"?)(?=\\s|;|=)",
+          "name": "keyword.control",
+          "match": "(?i)(?<!//)(?<=setinfo\\s)(\"?)([\\w\\p{L}\\$%+-.~*]+)(\"?)(?=\\s|;|=)",
           "captures": {
-            "1": { "name": "string.quoted.double.cfg" },
-            "2": { "name": "keyword.control.cfg" },
-            "3": { "name": "string.quoted.double.cfg" }
+            "1": { "name": "string.quoted.double" },
+            "2": { "name": "keyword.control" },
+            "3": { "name": "string.quoted.double" }
           }
         },
         {
-          "name": "support.class.cfg",
-          "match": "(?i)(?<!//)(?<=setinfo\\s\"?[\\w\\p{L}\\$+-]+\"?\\s)(\"?)([\\w\\p{L}\\$+-]+)(\"?)(?=\\s|;|=)",
+          "name": "support.class",
+          "match": "(?i)(?<!//)(?<=setinfo\\s\"?[\\w\\p{L}\\$%+-.~*]+\"?\\s)(\"?)([\\w\\p{L}\\$%+-.~*]+)(\"?)(?=\\s|;|=)",
           "captures": {
-            "1": { "name": "string.quoted.double.cfg" },
-            "2": { "name": "support.class.cfg" },
-            "3": { "name": "string.quoted.double.cfg" }
+            "1": { "name": "string.quoted.double" },
+            "2": { "name": "support.class" },
+            "3": { "name": "string.quoted.double" }
           }
         }
       ]
@@ -170,15 +171,15 @@
     "log-flags": {
       "patterns": [
         {
-          "name": "keyword.control.cfg",
+          "name": "keyword.control",
           "match": "(?i)(?<=log_flags\\s)\\w+"
         },
         {
-          "name": "support.class.cfg",
+          "name": "support.class",
           "match": "(?i)(?<=log_flags\\s\\w+\\s)\\w+"
         },
         {
-          "name": "constant.language.cfg",
+          "name": "constant.language",
           "match": "(?i)(?<=log_flags\\s\\w+(\\s\\w+)?\\s)([\\+|-]\\w+)"
         }
       ]
@@ -187,28 +188,28 @@
       "patterns": [
         {
           "name": "support.function",
-          "match": "(?i)(?<!//)(?<=alias\\s)(\"?)([\\w\\p{L}\\$%+-]+)(\"?)",
+          "match": "(?i)(?<!//)(?<=alias\\s+?)(\"?)([\\w\\p{L}\\$%+-.~*]+)(\"?)",
           "captures": {
-            "1": { "name": "string.quoted.double.cfg" },
+            "1": { "name": "string.quoted.double" },
             "2": { "name": "support.function" },
-            "3": { "name": "string.quoted.double.cfg" }
+            "3": { "name": "string.quoted.double" }
           }
         },
         {
           "name": "constant.regexp",
-          "match": "(?i)(?<!//)(?<=alias\\s[\\w\\p{L}\\$%+-]+\\s)([\\w\\p{L}\\$%+-]+)"
+          "match": "(?i)(?<!//)(?<=alias\\s+?[\\w\\p{L}\\$%+-.~*]+\\s+?)([\\w\\p{L}\\$%+-.~*]+)"
         }
       ]
     },
     "buttons": {
       "patterns": [
         {
-          "name": "support.class.cfg",
+          "name": "support.class",
           "match": "(?i)(?:(?<=bind\\s)|(?<=bindtoggle\\s))(\")?(\\d|[a-z]|capslock|key|mouse_x|mouse_y|mouse\\d?|mwheelup|mwheeldown|kp_\\w+|leftarrow|uparrow|rightarrow|downarrow|space|shift|rshift|alt|ralt|ctrl|rctrl|tab|ins|end|escape|semicolon|backspace|home|end|f\\d{1,2}|pgup|pgdn|pause|\\/|`|\\'|\\[|\\]|\\.|\\-|\\=|,|\\\\)(\")?\\s",
           "captures": {
-            "1": { "name": "string.quoted.double.cfg" },
+            "1": { "name": "string.quoted.double" },
             "2": { "name": "support.class" },
-            "3": { "name": "string.quoted.double.cfg" }
+            "3": { "name": "string.quoted.double" }
           }
         }
       ]
@@ -221,7 +222,7 @@
         },
         {
           "name": "constant.language",
-          "match": "(?i)\\b(yaw|pitch|say|say_team|say_party|lastinv|load_itempreset|voicemenu|voice_menu_\\d|join_class|vote|changeclass|changeteam|open_charinfo_\\w+|show_quest_log|disguiseteam|cancelselect|pause|quit|toggleconsole|buy|buymenu|radio|radio(1|2|3)|drop|teammenu|messagemode|messagemode2|disconnect|developer|playvol|screenshot|save_replay|askconnect_accept|abuse_report_queue|name|lastdisguise|dropitem|centerview|showmapinfo|inspect|invnext|invprev|wait|taunt_by_name|slot\\d{1,2})\\b"
+          "match": "(?i)\\b(noclip|yaw|pitch|say|say_team|say_party|lastinv|load_itempreset|voicemenu|voice_menu_\\d|join_class|vote|changeclass|changeteam|open_charinfo_\\w+|show_quest_log|disguiseteam|cancelselect|pause|quit|toggleconsole|buy|buymenu|radio|radio(1|2|3)|drop|teammenu|messagemode|messagemode2|disconnect|developer|playvol|screenshot|save_replay|askconnect_accept|abuse_report_queue|name|lastdisguise|dropitem|centerview|showmapinfo|inspect|invnext|invprev|wait|taunt_by_name|slot\\d{1,2})\\b"
         }
       ]
     },
@@ -229,18 +230,31 @@
       "patterns": [
         {
           "name": "keyword.operator.quantifier.regexp",
-          "match": "(?i)\\b(sleep|log_flags|echo|echoln|clear|exec|execifexists|exec_async|grep|setinfo|incrementvar|multvar|pwatchvar|toggle|cl_radial_radio_tab_(0|1|2)_text_(1|2|3|4|5|6|7|8))\\b"
+          "match": "(?i)\\b(sleep|log_flags|echo|echoln|clear|execifexists|exec_async|exec|grep|setinfo|incrementvar|multvar|pwatchvar|toggle|cl_radial_radio_tab_(0|1|2)_text_(1|2|3|4|5|6|7|8))\\b"
+        }
+      ]
+    },
+    "exec": {
+      "patterns": [
+        {
+          "name": "constant.language",
+          "match": "(?i)(?<!//)(?<=\\b(exec|exec_async)\\s+)(\"?)([\\w\\p{L}\\$%+-.~*/\\\\]+)(\"?)(?=\\s*(?!//))",
+          "captures": {
+            "2": { "name": "string.quoted.double" },
+            "3": { "name": "constant.language" },
+            "4": { "name": "string.quoted.double" }
+          }
         }
       ]
     },
     "CS-command": {
       "patterns": [
         {
-          "name": "keyword.control.cfg",
+          "name": "keyword.control",
           "match": "(?i)\\b(buddha_\\w+|joy_\\w+|fov_\\w+|viewmodel\\w+|m_\\w+|map_\\w+|r_\\w+|net_\\w+|cl_\\w+|tf_\\w+|sv_\\w+|con_\\w+|obj_\\w+|hud_\\w+|sixense_\\w+|windows_\\w+|snd_\\w+|mat_\\w+|mp_\\w+|flex_\\w+|lod_\\w+|rope_\\w+|glow_\\w+|demo_\\w+|func_\\w+|violence_\\w+|dsp_\\w+|props_\\w+|ragdoll_\\w+|ai_\\w+|g_\\w+|cam_\\w+|sb_\\w+|mod_\\w+|nav_\\w+|filesystem_\\w+|budget__\\w+|c_\\w+|cache_\\w+|replay_\\w+|vr_\\w+|pyro_\\w+|nb_\\w+|ent_\\w+|fire_\\w+|fog_\\w+|ifm_\\w+|ds_\\w+|host_\\w+|cc_\\w+|g_\\w+|gameui_\\w+|bot_\\w+|mm_\\w+|mc_\\w+|spec_\\w+|zoom_\\w+|gameinstructor_\\w+|fps_\\w+|game_\\w+|voice_\\w+|sm_\\w+)\\b"
         },
         {
-          "name": "keyword.control.cfg",
+          "name": "keyword.control",
           "match": "(?i)\\b(ignoremsg|getpos_exact|getpos|setpos|setang|setpos_player|setpos_exact|setang_exact|play|secondary(0|1|2|3|4)|midtier(0|1|2|3|4)|rifle(0|1|2|3|4)|status|kill|stopsound|firstperson|thirdperson|buddha|weapon_accuracy_nospread|cmd|give|ammo_grenade_limit_total|binddefaults|player_ping|alias|bind|bind_mac|bindtoggle|toggle|unbind|unbindall|volume|crosshair|sensitivity|rate|map|deathmatch|tracer_extra|in_usekeyboardsampletime|joystick|fast_fogvolume|incrementvar|full|blink_duration|bloodspray|bot)\\b"
         }
       ]
