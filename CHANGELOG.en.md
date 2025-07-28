@@ -6,6 +6,11 @@
 
 <h1>Changelog</h1>
 
+# [1.5.4]
+## Changed
+- **Adjusted language-configuration**:
+  - `.` no longer splits words
+
 # [1.5.3]
 ## New Features
 - **New Matching Added**:

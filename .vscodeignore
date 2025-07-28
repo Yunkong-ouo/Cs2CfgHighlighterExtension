@@ -1,5 +1,7 @@
+node_modules
 .vscode/**
 .vscode-test/**
 .gitignore
+.gitattributes
 vsc-extension-quickstart.md
 打包.bat
