@@ -6,44 +6,37 @@
 
 <h1>Changelog</h1>
 
+# [1.5.5]
+- Added various new commands, provided by a contributor
+
 # [1.5.4]
-## Changed
-- **Adjusted language-configuration**:
+- Adjusted **language-configuration** settings:
   - `.` no longer splits words
 
 # [1.5.3]
-## New Features
-- **New Matching Added**:
-  - `exec`
-
-## Improvements
-- **Optimized Matching Logic**:
-  - `alias` matching
-
-- **New Commands**:
+- Added matching:
+  - Matching support for new `exec` command
+- Optimized matching logic:
+  - Improved matching for `alias`
+- Added commands:
   - `noclip`
 
 # [1.5.2]
-## Improvements
-- **Optimized Matching Logic**:
-  - Numeric matching
-  - `alias` matching
-  - `setinfo` matching
-
-- **Documentation Updates**:
-  - Updated README text
-
-- **New Commands**:
+- Optimized matching logic:
+  - Number matching improvements
+  - `alias` matching improvements
+  - `setinfo` matching improvements
+- Updated README documentation
+- Added commands:
   - `quickinv`
 
 # [1.5.1]
-- **New Commands**:
+- Added commands:
   - `ignoremsg`
-- **Bug Fixes**:
-  - Fixed an issue where `alias` could not recognize `%`.
+- Fixed issue where alias could not recognize `%`
 
 # [1.5.0]
-- **New Commands**:
+- Added commands:
   - `getpos_exact`
   - `getpos`
   - `setpos`
@@ -54,25 +47,25 @@
   - `play`
 
 # [1.4.9]
-- Fixed conflicts between comments and syntax highlighting in `cs2script`.
+- Fixed conflicts between cs2script comments and syntax highlighting
 
 # [1.4.8]
-- Fixed syntax highlighting issues in `cs2script` and added some new matching rules.
+- Fixed cs2script highlighting issues and added some matching support
 
 # [1.4.7]
-- Fixed some bugs and improved performance.
-- Added syntax highlighting for `cs2script`.
+- Fixed multiple bugs and improved performance
+- Added cs2script syntax highlighting
 
 # [1.4.6]
-- Added highlighting for some commands.
+- Added multiple command highlighting rules
 
 # [1.4.5]
-- Fixed issues related to numbers:
-  - Resolved double-quote conflict issues.
-  - Fixed other conflicting problems.
+- Fixed number-related issues:
+  - Resolved double quote conflicts
+  - Fixed other conflicts
 
 # [1.4.4]
-- **Added Hash Matching Modes**:
-  - Support for SHA-224, SHA-3(224, 256, 384, 512), and MD6(256/512).
-  - Extended support for CRC32, Adler-32, and GOST hash functions.
-  - Improved compatibility for non-standard hash lengths.
+- Added hash matching modes:
+  - Support for SHA-224, SHA-3 (224, 256, 384, 512), MD6 (256/512)
+  - Extended support for CRC32, Adler-32, and GOST hashes
+  - Improved compatibility with non-standard hash lengths
