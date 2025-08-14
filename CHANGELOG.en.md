@@ -6,6 +6,12 @@
 
 <h1>Changelog</h1>
 
+# [1.5.6]
+- Fixes & Improvements
+  - Fixed an issue where `exec` was not matched correctly
+  - Improved matching logic
+  - Removed duplicate matches
+
 # [1.5.5]
 - Added various new commands, provided by a contributor
 
