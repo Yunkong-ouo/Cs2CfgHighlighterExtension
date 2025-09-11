@@ -76,7 +76,7 @@
       "patterns": [
         {
           "name": "comment.line.double-slash",
-          "begin": "//|^(?=.*attack)(?=.*jump).+$",
+          "begin": "//",
           "end": "$"
         }
       ]

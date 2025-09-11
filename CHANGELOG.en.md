@@ -6,6 +6,10 @@
 
 <h1>Changelog</h1>
 
+# [1.5.7]
+- Fixes
+  - Fixed incorrect comment matching
+
 # [1.5.6]
 - Fixes & Improvements
   - Fixed an issue where `exec` was not matched correctly
